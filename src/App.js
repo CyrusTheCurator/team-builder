@@ -17,7 +17,12 @@ function App() {
   return (
     <div className="App">
       <h3>Enter new team member details and click submit</h3>
-      <Form addTeamMember={addTeamMember} memberToEdit={memberToEdit} />
+      <Form
+        addTeamMember={addTeamMember}
+        memberToEdit={memberToEdit}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
+      />
       <div>
         <h1>Saved Members</h1>
         {savedTeam.map(element => {

@@ -9,11 +9,14 @@ function Form(props) {
   });
 
   useEffect(() => {
-    if (props.memberToEdit) {
+    if (props.isEditing) {
+      props.setIsEditing(false);
       setNewMember(props.memberToEdit);
+    }
+    if (props.memberToEdit != null) {
       console.log("hey guys, we are now editing ", newMember);
     }
-  }, [props.memberToEdit]);
+  }, [props.memberToEdit, props.isEditing]);
 
   const submitHandler = event => {
     console.log("adding new member: ", newMember);
